@@ -6,30 +6,25 @@ class ProjectCard extends React.Component {
         super()
         this.myElement = null
         this.myTween = new TimelineLite()
-        this.state = {
-            divGrow: false,
-            divStyle: {}
-        }
     }
 
-    clickProject(project) {
-        console.log(project + " clicked!")
-        this.state.divGrow 
-            ? this.setState({divGrow: false, divStyle: {flexBasis: "23%", height: "300px", order: 1, transition: "flex-basis 0.5s"}}) 
-            : this.setState({divGrow: true, divStyle: {flexBasis: "100%", height: "100%", order: 10, transition: "flex-basis 0.5s"}})
-        // this.myTween.from(this.myElement,0.5,{ transform: "scale(5)", opacity:0 , ease: Power1.easeIn })
-	}
+    componentDidUpdate() {
+        this.props.styleControl[this.props.id]["enlarged"] && 
+            this.myTween.from(this.myElement,0.5,{ y: -100, opacity:0 , ease: Power1.easeIn } ,'+=0.5')
+    }
 
     render() {
+        let isEnlarged = this.props.styleControl[this.props.id]["enlarged"]
         return (
             <div ref={div => this.myElement = div}
-                className="card"
-                onClick={() => this.clickProject(this.props.projectName)}
-                style={this.state.divStyle}
+                className={isEnlarged ? "card-large" : "card"}
+                onClick={() => this.props.clickProject(this.props.id)}
             >
                 <h2 className="card-title">{this.props.projectName}</h2>
-                <img className={this.state.divGrow && "bigImg"} src={`https://picsum.photos/id/1${this.props.id}/200`} alt={this.props.projectName} />
-                {this.state.divGrow && 
+                <img 
+                    className={isEnlarged && "bigImg"} 
+                    src={`https://picsum.photos/id/1${this.props.id}/200`} alt={this.props.projectName} />
+                {isEnlarged && 
                     <div>               
                         <h3>Project Description: </h3>
                         <p className="text-body">
