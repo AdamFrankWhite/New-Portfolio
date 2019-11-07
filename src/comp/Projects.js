@@ -72,6 +72,8 @@ class Projects extends React.Component {
                         clickProject={this.clickProject}
                         styleControl={this.state.styleControl}
                     />
+
+                    <EnlargedCard />
                 </div>
                 
             </div>

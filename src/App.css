@@ -18,28 +18,51 @@
 .card {
   flex-basis: 23%;
   margin: 5px;
-  border-radius: 10px;
-  border: gray 3px dotted;
+  border-radius: 5px;
+  border: gray 3px solid;
   order: 1; 
-  transition: "flex-basis 0.5s";
+  /* transition: flex-basis 0.5s; */
 }
+
 
 .card-large {
   flex-basis: 100%;
-   height: 100%;
-   order: 10;
-   transition: "flex-basis 0.5s";
+  height: 100%;
+  order: 10;
+  border: 3px gray dotted;
+  border-radius: 10px;
+  margin-top: 30px;
+  /* transition: flex-ba3sis ease-in-out .5s; */
 }
 
-.bigImg {
-  width: 80%;
-  height: 600px;
+.card-title-lg {
+  color: white;
+  padding-top: 0.75em;
+  padding-bottom: 1.5em;
+  font-size: 2.25em;
+}
+
+.left-col {
+  flex-basis: 35%;
+  margin: 5%;
+  height: 300px;
+}
+
+.right-col {
+  flex-basis: 60%;
+  padding-right: 5%;
+  border-left: 3px white solid;
+}
+.flex {
+  display: flex;
 }
 .card:hover {
   opacity: 0.8;
   transition: 0.3s;
   background-color: white;
   cursor: pointer;
+  border-radius: 25px;
+  transition: border-radius 0.3s;
 }
 .card > img {
   border-radius: 10px;
@@ -135,7 +158,7 @@ h2 {
 
 .text-body {
   color: gray;
-  width: 70%;
+  width: 90%;
   margin: auto;
   font-size: 1.25em;
   padding-bottom: 1em;
