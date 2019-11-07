@@ -1,26 +1,43 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Header from './comp/Header'
+import {BrowserRouter as Router, Route} from 'react-router-dom'
+import About from './comp/About'
+import Projects from './comp/Projects'
+import Banner from './comp/Banner'
+import Blog from './comp/Blog'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+	constructor() {
+		super()
+	}
+	
+	
+  	render() {
+		return (
+			<Router>
+			<div className="App">
+				<Header />
+				
+				<Route exact path="/" component={Banner} />
+				<ReactCSSTransitionGroup
+					transitionName="about"
+					transitionAppear={true}
+					transitionAppearTimeout={1000}
+					transitionEnterTimeout={500}
+					transitionLeaveTimeout={500}>
+
+					<Route path="/about" component={About} />
+					
+				</ReactCSSTransitionGroup>
+				
+				<Route path="/projects" component={Projects} />
+				<Route path="/blog" component={Blog} />
+			</div>
+			</Router>
+		);
+	  }
 }
 
 export default App;
