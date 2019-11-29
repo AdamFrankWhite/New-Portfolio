@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     return (
-        <nav>          
+        <nav className="flex-col">  
+            <h2 className="title">ADAM FRANK WHITE</h2> 
+            <hr className="title-rule"></hr>     
             <ul className="nav">
                 
                 <Link to="/about"><li className="nav-item">About</li></Link>

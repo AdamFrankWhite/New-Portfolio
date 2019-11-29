@@ -6,7 +6,7 @@ import About from './comp/About'
 import Projects from './comp/Projects'
 import Banner from './comp/Banner'
 import Blog from './comp/Blog'
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import Contact from './comp/Contact'
 
 class App extends React.Component {
 	constructor() {
@@ -21,19 +21,10 @@ class App extends React.Component {
 				<Header />
 				
 				<Route exact path="/" component={Banner} />
-				<ReactCSSTransitionGroup
-					transitionName="about"
-					transitionAppear={true}
-					transitionAppearTimeout={1000}
-					transitionEnterTimeout={500}
-					transitionLeaveTimeout={500}>
-
-					<Route path="/about" component={About} />
-					
-				</ReactCSSTransitionGroup>
-				
+				<Route path="/about" component={About} />
 				<Route path="/projects" component={Projects} />
 				<Route path="/blog" component={Blog} />
+				<Route path="/contact" component={Contact} />
 			</div>
 			</Router>
 		);

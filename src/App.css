@@ -2,30 +2,151 @@
   text-align: center;
   background-color: darkslategray;
   color: rgb(15, 196, 196);
+  width: 100%;
+  /* height: 100vh; */
+  min-height: 100vh;
+  font-size: 0.9em;
 }
+
+/* ==== Style resets ==== */
 
 * {
   padding: 0;
   margin: 0;
+  box-sizing: border-box;
 }
 
-.card-container {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+textarea, input {
+  border: none;
+}
+textarea:focus, input:focus{
+  outline: none;
+  border: none;
+}
+
+/* == Slideshow == */
+
+.arrow {
+  font-size: 3em;
+  font-weight: bold;
+  padding: 0.5em;  
+}
+
+
+.arrow:hover {
+  cursor: pointer;
+}
+
+.carousel {
   width: 80%;
+  margin: auto;
+}
+
+ /* === Main Styles === */
+
+.card-container {
+  width: 95%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  padding-right: 30px;
 }
 .card {
-  flex-basis: 23%;
+  flex-basis: 100%;
   margin: 5px;
   border-radius: 5px;
   border: gray 3px solid;
   order: 1; 
-  /* transition: flex-basis 0.5s; */
+  margin-bottom: 30px; /* moves buttons */
+  opacity: 0.8;
+  background-color: white;
 }
 
+.desc-p {
+  padding-top: 1em;
+}
 
+.contact-form {
+  width: 90%;
+  margin: auto;
+  border: white 3px solid;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 15px 15%;
+  border-radius: 10px;
+  border: 1px cyan solid;
+}
+
+.row input,
+.row textarea {
+  height: 50px;
+  width: 80%;
+  margin: 1em;
+  border-radius: 5px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+  font-size: 1em; 
+  padding: 1em;
+}
+
+.row textarea {
+  height: 500px;
+}
+
+.flex-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  color: white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 100;
+}
+
+.label {
+  position: absolute;
+  left: 3%;
+  top: -16px;
+  padding: 0.25em;
+  background: darkslategray;
+  border-radius: 15px; 
+  /* border: 1px cyan solid; */
+  z-index: 1000;
+}
+input:focus {
+  border-bottom: darkslateblue 6px solid;
+  transition: 0.25s;
+}
+
+label:hover {
+  cursor: pointer;
+  box-shadow: 0px 0px 5px cyan;
+}
+
+.title-rule {
+  width: 23%;
+  height: 1px;
+  margin: auto;
+  margin-top: 0.75em;
+}
 .card-large {
+  width: 80%;
+  margin: auto;
   flex-basis: 100%;
   height: 100%;
   order: 10;
@@ -43,18 +164,50 @@
 }
 
 .left-col {
-  flex-basis: 35%;
+  flex-basis: 40%;
   margin: 5%;
-  height: 300px;
 }
 
+.thumb {
+  width: 200px;
+  height: auto;
+}
+
+.imgBig {
+  width: 100%;
+  height: auto;
+  padding-bottom: 25px;
+  border-bottom: 2px gray solid;
+  border-radius: 5px 5px 0 0 ;
+}
+
+.imgLinks {
+  padding-top: 15px;
+}
+
+.imgLinks:hover {
+  text-shadow: 1px 0 0.01px white;
+  border-bottom: 1px solid white;
+  padding-bottom: 2px;
+  color: white;
+  transition: color 0.3s;
+}
+
+
 .right-col {
-  flex-basis: 60%;
+  flex-basis: 55%;
   padding-right: 5%;
   border-left: 3px white solid;
 }
 .flex {
   display: flex;
+}
+
+.flex-center {
+  display: flex;
+  justify-content: space-around;
+  font-size: 1.25em;
+  font-weight: 400;
 }
 .card:hover {
   opacity: 0.8;
@@ -74,7 +227,7 @@
   margin: 1em;
 }
 .card-title {
-  font-size: 1.5em;
+  font-size: 1.25em;
   text-align: center;
   color: navy;
 }
@@ -84,8 +237,8 @@ nav a {
   text-align: center;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 1.5em;
-  padding: 0.7em;
+  font-size: 1em;
+  padding: 0.4em;
   position: relative;
   
 }
@@ -150,7 +303,7 @@ nav {
 }
 
 h1 {
-  font-size: 5em;
+  font-size: 2.5em;
 }
 
 h2 {
@@ -179,4 +332,32 @@ h2 {
 .nested-item:hover {
   border-left: 8px blue solid;
   transition: 0.3s;
+}
+
+@media (min-width: 1200px) {
+  nav a {
+    font-size: 1.5em;
+    padding: 0.7em;
+  }
+
+  h1 {
+    font-size: 5em;
+  }
+  .about-text {
+    width: 70%;
+    margin: auto;
+  }
+  .card {
+    flex-basis: 23%;
+    /* transition: flex-basis 0.5s; */
+  }
+
+  .card-container {
+    width: 80%;
+  }
+
+  .contact-form {
+    width: 60%;
+  }
+  
 }
