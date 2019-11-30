@@ -1,6 +1,6 @@
 import React from 'react'
 import ProjectCard from './ProjectCard'
-import {TweenMax, TweenLite, Power1, Elastic, TimelineLite} from 'gsap/TweenMax'
+import {Power1, TimelineLite} from 'gsap/TweenMax'
 import EnlargedCard from './EnlargedCard'
 import MediaQuery from 'react-responsive'
 import Carousel from "react-multi-carousel";
@@ -118,7 +118,6 @@ class Projects extends React.Component {
         let projects = this.projects.map(project => 
                 <ProjectCard projectName={project.projectName} id={project.id} clickProject={this.clickProject} tech={project.tech} img={project.img} description={project.description}/>
             )
-        let slideshow = projects.slice(this.state.slides.start, this.state.slides.end)
 
         
         return (

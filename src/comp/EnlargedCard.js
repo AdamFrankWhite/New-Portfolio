@@ -1,5 +1,5 @@
 import React from 'react'
-import {TweenMax, TweenLite, Power1, TimelineLite} from 'gsap/TweenMax'
+import {Power1, TimelineLite} from 'gsap/TweenMax'
 
 class EnlargedCard extends React.Component {
     constructor() {
@@ -29,8 +29,8 @@ class EnlargedCard extends React.Component {
                                 // className="left-col" 
                                 src={this.props.img} className="imgBig" alt={this.props.projectName} />
                             <div className="flex-center">    
-                                <a href="#" className="imgLinks" target="blank">View Code</a>
-                                <a href="#" className="imgLinks" target="blank">View Project</a>
+                                <a href="www.github.com/AdamFrankWhite" className="imgLinks" target="blank">View Code</a>
+                                <a href="www.github.com/AdamFrankWhite" className="imgLinks" target="blank">View Project</a>
                             </div>
                         </div>
                         

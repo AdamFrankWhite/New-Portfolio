@@ -1,5 +1,6 @@
 import React from 'react'
 import { TimelineLite } from 'gsap/TweenMax'
+import emailjs from 'emailjs-com'
 
 class ContactForm extends React.Component {
     constructor() {
@@ -34,12 +35,34 @@ class ContactForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault()
-        console.log(this.state)
-        this.setState({sent: true})
+        this.setState({sending:true})
+    
+        const templateParams = {
+            name: this.state.name,
+            subject: this.state.subject,
+            email: this.state.email,
+            message: this.state.message
+        };
+         
+        emailjs.send('gmail','template_PE0yq4MZ', templateParams, 'user_wX2G7BuTDkcHkqSyCMvuU')
+            .then((response) => {
+                
+            this.setState({sending: false, sent: true})
+               console.log('SUCCESS!', response.status, response.text);
+            }, (err) => {
+               console.log('FAILED...', err);
+            });
+        
     }
+        
+    
     render() {
         return (
-            <div className="contact-form">
+            <form 
+                className="gform contact-form"
+                id="contact-form"
+                
+            >
                 <label htmlFor="name" className="row" ref={row => this.nameInput = row}>
                     <span className="label">*Name: </span> 
                     <input 
@@ -82,10 +105,11 @@ class ContactForm extends React.Component {
                         onChange={this.handleChange}
                     />
                 </label>
+                {this.state.sending && "sending..."}
                 {this.state.sent && <p>Thank you for your message</p>}
-                <button type="submit" onClick={this.handleSubmit}>Submit</button>
+                <button onClick={this.handleSubmit}>Submit</button>
                 
-            </div>
+            </form>
 
         )
         

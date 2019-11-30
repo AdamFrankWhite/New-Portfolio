@@ -1,5 +1,5 @@
 import React from 'react'
-import {TweenMax, TweenLite, Power1, Elastic, TimelineLite} from 'gsap/TweenMax'
+import {Power1, TimelineLite} from 'gsap/TweenMax'
 class About extends React.Component {
     constructor() {
         super()

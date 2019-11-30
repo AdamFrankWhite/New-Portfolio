@@ -1,5 +1,5 @@
 import React from 'react'
-import {TweenMax, TweenLite, Power1, TimelineLite} from 'gsap/TweenMax'
+import {TimelineLite} from 'gsap/TweenMax'
 import MediaQuery from 'react-responsive'
 
 class ProjectCard extends React.Component {
