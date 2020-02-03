@@ -8,6 +8,18 @@
   font-size: 0.9em;
 }
 
+.front {
+  position: relative;
+  z-index: 1000;
+  background-color: rgba(47, 79, 79, 0.9);
+}
+.background {
+  position: fixed;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+}
+
 /* ==== Style resets ==== */
 
 * {
@@ -49,6 +61,14 @@ textarea:focus, input:focus{
 
  /* === Main Styles === */
 
+.particles-cont {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
 .card-container {
   width: 95%;
   margin: auto;
@@ -78,6 +98,10 @@ textarea:focus, input:focus{
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+}
+
+.sub-heading {
+  margin-bottom: 1em;
 }
 
 .row {
@@ -110,6 +134,7 @@ textarea:focus, input:focus{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 3em;
 }
 
 .title {
@@ -231,6 +256,11 @@ label:hover {
   text-align: center;
   color: navy;
 }
+
+nav {
+  width: 50%;
+
+}
 nav a {
   color: white;
   text-decoration: none;
@@ -245,6 +275,7 @@ nav a {
 
 .banner {
   padding: 10em 0;
+  /* background: transparent; */
 }
 
 nav a:after {
@@ -341,11 +372,13 @@ h2 {
   }
 
   h1 {
-    font-size: 5em;
+    font-size: 3.5em;
   }
   .about-text {
     width: 70%;
     margin: auto;
+    padding: 0.2em;
+    border-radius: 10px;
   }
   .card {
     flex-basis: 23%;

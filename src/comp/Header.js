@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 
 function Header() {
     return (
-        <nav className="flex-col">  
+        <nav className="flex-col front">  
             <h2 className="title">ADAM FRANK WHITE</h2> 
             <hr className="title-rule"></hr>     
             <ul className="nav">

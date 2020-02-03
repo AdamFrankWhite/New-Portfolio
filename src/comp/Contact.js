@@ -17,7 +17,7 @@ class Contact extends React.Component {
         return (
             <div className="container">
                 <h1 ref={ h1 => this.element = h1 }>Contact</h1>
-                <h4>Want to get in touch? You can reach me at adam.white06@gmail.com - alternatively, send a message using the form below</h4>
+                <h4 className="sub-heading">Want to get in touch? You can reach me at adam.white06@gmail.com - alternatively, send a message using the form below</h4>
                 <ContactForm />
             </div>
             

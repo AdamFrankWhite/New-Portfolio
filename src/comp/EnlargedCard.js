@@ -19,7 +19,7 @@ class EnlargedCard extends React.Component {
     render() {
         return (
             <div ref={div => this.myElement = div}
-                className="card-large"
+                className="card-large front"
                 // onClick={() => this.props.clickProject(this.props.id)}
             >
                 <h2 className="card-title-lg">{this.props.projectName}</h2>
@@ -29,8 +29,8 @@ class EnlargedCard extends React.Component {
                                 // className="left-col" 
                                 src={this.props.img} className="imgBig" alt={this.props.projectName} />
                             <div className="flex-center">    
-                                <a href="www.github.com/AdamFrankWhite" className="imgLinks" target="blank">View Code</a>
-                                <a href="www.github.com/AdamFrankWhite" className="imgLinks" target="blank">View Project</a>
+                                <a href={`https://github.com/AdamFrankWhite/${this.props.projectName}`} className="imgLinks" target="blank">View Code</a>
+                                <a href={`${this.props.projectURL}`} className="imgLinks" target="blank">View Project</a>
                             </div>
                         </div>
                         
