@@ -45,6 +45,7 @@ class Projects extends React.Component {
             {
                 id: 0, 
                 projectName: "Favourite Beer App", 
+                gitURI: "beer-app",
                 projectURL: "https://my-fave-beers.herokuapp.com",
                 tech: "React, Node, MongoDB, Express, Bootstrap", 
                 img:"img/beer-app.jpg",
@@ -53,6 +54,7 @@ class Projects extends React.Component {
             {
                 id: 1, 
                 projectName: "Ebook Landing Page",
+                gitURI: "landing-page-1",
                 projectURL: "http://www.quittingweedthebook.com", 
                 tech: "HTML, CSS, jQuery, Bootstrap", 
                 img:"img/ebook.jpg",
@@ -61,6 +63,7 @@ class Projects extends React.Component {
             {
                 id: 2, 
                 projectName: "Castle Explorer",
+                gitURI: "castle-finder",
                 projectURL: "http://adamfrankwhite.com/projects/castle-explorer", 
                 tech: "JavaScript, jQuery, HTML, CSS", 
                 img:"img/castle-finder.jpg",
@@ -69,6 +72,7 @@ class Projects extends React.Component {
             {
                 id: 3, 
                 projectName: "Kakuro", 
+                gitURI: "kakuro",
                 projectURL: "http://adamfrankwhite.com/projects/kakuro",
                 tech: "React, CSS", 
                 img:"img/kakuro.jpg", 
@@ -76,7 +80,8 @@ class Projects extends React.Component {
             },
             {
                 id: 4, 
-                projectName: "NASA Image Search App", 
+                projectName: "NASA Image Search App",
+                gitURI: "nasa-nebulae-search", 
                 projectURL: "http://adamfrankwhite.com/projects/nasa-image-search-app",
                 tech: "React, CSS and NASA API", 
                 img:"img/nasa-app.jpg",
@@ -86,6 +91,7 @@ class Projects extends React.Component {
             {
                 id: 5, 
                 projectName: "Trump Quote Generator",
+                gitURI: "trump-quote-gen",
                 projectURL: "http://adamfrankwhite.com/projects/trump-quote-generator",
                 tech: "HTML, CSS, JavaScript, jQuery", 
                 img:"img/trump-quote-gen.jpg",
@@ -93,7 +99,8 @@ class Projects extends React.Component {
             },
             {
                 id: 6, 
-                projectName: "React Calculator", 
+                projectName: "React Calculator",
+                gitURI: "react-calculator", 
                 projectURL: "http://adamfrankwhite.com/projects/react-calc",
                 tech: "React, CSS", 
                 img:"img/calculator.jpg",
@@ -127,13 +134,14 @@ class Projects extends React.Component {
     render() {
         let enlargedCardProps = this.state.enlargedCardProps
         let projects = this.projects.map(project => 
-                <ProjectCard projectName={project.projectName} projectURL={project.projectURL} id={project.id} clickProject={this.clickProject} tech={project.tech} img={project.img} description={project.description}/>
+                <ProjectCard projectName={project.projectName} projectURL={project.projectURL} gitURI={project.gitURI} id={project.id} clickProject={this.clickProject} tech={project.tech} img={project.img} description={project.description}/>
             )
 
         
         return (
             <div ref={div => this.cardCont = div}>
                 <h1>My Projects</h1>
+                <MediaQuery minWidth={1201}>
                     <div className="carousel">
                         <Carousel responsive={responsive} showDots={true} renderButtonGroupOutside={true} >
                             
@@ -142,12 +150,18 @@ class Projects extends React.Component {
                         </Carousel>
                         
                     </div>
+                </MediaQuery>
+                <MediaQuery maxWidth={1200}>
+                        {projects}
+                </MediaQuery>
+                    
                     
                 {enlargedCardProps && 
                         <MediaQuery minWidth={1201}>
                             <EnlargedCard 
                                 projectName={enlargedCardProps.projectName} 
                                 projectURL={enlargedCardProps.projectURL}
+                                gitURI={enlargedCardProps.gitURI}
                                 id={enlargedCardProps.id} 
                                 clickProject={this.state.clickProject}
                                 tech={enlargedCardProps.tech}

@@ -29,7 +29,7 @@ class EnlargedCard extends React.Component {
                                 // className="left-col" 
                                 src={this.props.img} className="imgBig" alt={this.props.projectName} />
                             <div className="flex-center">    
-                                <a href={`https://github.com/AdamFrankWhite/${this.props.projectName}`} className="imgLinks" target="blank">View Code</a>
+                                <a href={`https://github.com/AdamFrankWhite/${this.props.gitURI}`} className="imgLinks" target="blank">View Code</a>
                                 <a href={`${this.props.projectURL}`} className="imgLinks" target="blank">View Project</a>
                             </div>
                         </div>

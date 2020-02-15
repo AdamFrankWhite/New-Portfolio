@@ -60,8 +60,7 @@ class ContactForm extends React.Component {
         return (
             <form 
                 className="gform contact-form"
-                id="contact-form"
-                
+                id="contact-form"                
             >
                 <label htmlFor="name" className="row" ref={row => this.nameInput = row}>
                     <span className="label">*Name: </span> 
@@ -105,9 +104,9 @@ class ContactForm extends React.Component {
                         onChange={this.handleChange}
                     />
                 </label>
-                {this.state.sending && "sending..."}
-                {this.state.sent && <p>Thank you for your message</p>}
-                <button onClick={this.handleSubmit}>Submit</button>
+                {this.state.sending && <p className="submitted">sending..</p>}
+                {this.state.sent && <p className="submitted">Thank you for your message</p>}
+                {!this.state.sent && !this.state.sending && <span className="submit" onClick={this.handleSubmit}>Send</span>}
                 
             </form>
 
