@@ -34,8 +34,11 @@ function Banner() {
 			/>
             <div className="banner">
                 <div>
+                    
+                    <img className="avatar" src="img/avatar.jpg" alt="avatar"></img>
+                
                     <h1>Adam White</h1>
-                    <h2>Graduate React Developer</h2>
+                    <h2 className="banner-sub">Graduate React Developer</h2>
                 </div>
             </div>
         </div>

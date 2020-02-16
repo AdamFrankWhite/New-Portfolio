@@ -116,6 +116,7 @@ textarea:focus, input:focus{
 
 .sub-heading {
   margin-bottom: 1em;
+  letter-spacing: 0.04em;
 }
 
 .line {
@@ -302,6 +303,17 @@ nav a {
   align-items: center;
 }
 
+.banner-sub {
+  margin-top: 0;
+}
+
+.avatar {
+  height: 150px;
+  width: auto;
+  border-radius: 50%;
+  border: 4px red solid;
+}
+
 nav a:after {
   content: '';
   position: absolute;
@@ -430,6 +442,10 @@ h2 {
 
   h1 {
     font-size: 3.5em;
+  }
+
+  .about-heading {
+    margin-top: 0;
   }
   .about-text {
     width: 70%;

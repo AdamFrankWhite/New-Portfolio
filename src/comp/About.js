@@ -17,13 +17,15 @@ class About extends React.Component {
         // .from(element, speed, {effects}, delay)
         this.myTween.from(this.myElements[0], 0.75, {x:400 , opacity: 0, ease: Power1.easeIn }, 0);
         this.myTween.from(this.myElements[1], 0.75, {y:300 , opacity: 0, ease: Power1.easeIn }, 0);
+        this.myTween.from(this.myElements[2], 0.75, {y:-200 , opacity: 0, ease: Power1.easeIn }, 0);
 
     }
 
     render() {
         return (
             <div className="about-text">
-                <h2 ref={h2 => this.myElements[0] = h2}>About Me</h2>
+                <hr className="line" ref={hr => this.myElements[2] = hr }></hr>
+                <h2 ref={h2 => this.myElements[0] = h2}>ABOUT</h2>
                 <div ref={div => this.myElements[1] = div}>
                     <p className="text-body">
                         Self-taught, I have learned the fundamentals of web development from online videos and training sites, and through building projects. I have specialised in development using React, which I find versatile and a joy to use. The modular approach to building UI componenets is very satisfying and simple approach to development. My preferred code editor is Visual Studio Code.
