@@ -49,17 +49,17 @@ class Projects extends React.Component {
                 projectURL: "https://my-fave-beers.herokuapp.com",
                 tech: "React, Node, MongoDB, Express, Bootstrap", 
                 img:"img/beer-app.jpg",
-                description: ["My most ambitious project so far, this was my first foray into developing a full-stack web application. Using a whole slew of new technology, I became comfortable installing packages, which I needed a lot for this project: express, axios, bootstrap, bcrypt, and others. Using the Untappd API, I grabbed its data for its beers - I wanted to create an app where you could register, login, and search for beers, before adding them to your favourites and rate them. I would learn a lot about conditional rendering, back end, middleware and more.", "On the back end, I created a server using Express, that interfaced with a cloud-based Mongo database. It was a lot to learn, but was a lot of fun. The application allows users to register and login, using bcrypt to encrypt passwords before storing them in the database. Using React's lifecycle methods allowed me to efficiently load and update data, and axios provided a straightforward way to carry out CRUD operations.", "Finally, I uploaded the app to Heroku, using the Heroku CLI. I encountered difficulty getting the backend to work; it turned out that you can only use a single port per heroku app. Splitting the app into two heroku apps solved the issue."]
+                description: ["My most ambitious project so far, this was my first foray into developing a full-stack web application. Using a whole slew of new technology, I became comfortable installing packages, which I needed a lot for this project: express, axios, bootstrap, bcrypt, and others. Using the Untappd API, I created a beer bookmark app. I would learn a lot about conditional rendering, back end, middleware and more.", "On the back end, I created a server using Express, that interfaced with a cloud-based Mongo database. The application allows users to register and login, using bcrypt to encrypt passwords before storing them in the database, with axios handling the CRUD requests.", "Finally, I uploaded the app to Heroku. I encountered difficulty getting the backend to work in production; it turned out that you can only use a single port per heroku app. Splitting the app into two heroku apps solved the issue."]
             },
-            {
-                id: 1, 
-                projectName: "Ebook Landing Page",
-                gitURI: "landing-page-1",
-                projectURL: "http://www.quittingweedthebook.com", 
-                tech: "HTML, CSS, jQuery, Bootstrap", 
-                img:"img/ebook.jpg",
-                description: ["My sole commercial project thus far, I created a landing page using HTML, CSS, jQuery and Bootstrap.", "I used jQuery for some simple, neat animation."]
-            },
+            // {
+            //     id: 1, 
+            //     projectName: "Ebook Landing Page",
+            //     gitURI: "landing-page-1",
+            //     projectURL: "http://www.quittingweedthebook.com", 
+            //     tech: "HTML, CSS, jQuery, Bootstrap", 
+            //     img:"img/ebook.jpg",
+            //     description: ["My sole commercial project thus far, I created a landing page using HTML, CSS, jQuery and Bootstrap.", "I used jQuery for some simple, neat animation, and used media queries to create a mobile and tablet-friendly view. The project involved used simple Bootstrap classes; it also has an integrated Wordpress blog, hosted in a sub-directory with a similar design theme."]
+            // },
             {
                 id: 2, 
                 projectName: "Castle Explorer",
@@ -76,8 +76,10 @@ class Projects extends React.Component {
                 projectURL: "http://adamfrankwhite.com/projects/kakuro",
                 tech: "React, CSS", 
                 img:"img/kakuro.jpg", 
-                description: ["Logic puzzle rendered using React. Populates empty nested array with user input. Continually evaluates this array to the correct answers. When it matches, the user has solved the puzzle and the game is completed. Has several games to play, randomised on click without repeating previous puzzle. Can also use the hint feature to complete one individual box.", "In development, there were two large bugs to overcome: firstly, how to compare two arrays to check if they match. The solution was to use JSON.stringify(). Secondly, when populating an empty array with user answers, when starting a new game, the array was not clearing before the next game. This took a long time to solve. It turned out using the spread operator to create a copy of the original empty array was only creating a shallow copy, meaning that the same array was continually being used. The solution to this involved using JSON.parse(JSON.stringify(array)). React's use of components made rendering the puzzle straightforward and easy to edit."]
+                description: ["Logic puzzle rendered using React. I learnt a lot about React practices during this project, such as understanding how to thread class methods through props, and maintaining state in a single parent component. The game features include randomised game selection, hints and cheat option.", "In development, there were two large bugs to overcome: firstly, how to compare two arrays to check if they match. The solution was to use JSON.stringify(). Secondly, when populating an empty array with user answers, when starting a new game, the array was not clearing before the next game. It turned out using the spread operator to create a copy of the original empty array was only creating a shallow copy, meaning that the same array was continually being used. The solution to this involved using JSON.parse(JSON.stringify(array))."]
             },
+
+            // Populates empty nested array with user input. Continually evaluates this array to the correct answers. When it matches, the user has solved the puzzle and the game is completed. Has several games to play, randomised on click without repeating previous puzzle. Can also use the hint feature to complete one individual box.
             {
                 id: 4, 
                 projectName: "NASA Image Search App",
@@ -140,7 +142,8 @@ class Projects extends React.Component {
         
         return (
             <div ref={div => this.cardCont = div}>
-                <h1>My Projects</h1>
+                <hr className="line"></hr>
+                <h2>PROJECTS</h2>
                 <MediaQuery minWidth={1201}>
                     <div className="carousel">
                         <Carousel responsive={responsive} showDots={true} renderButtonGroupOutside={true} >

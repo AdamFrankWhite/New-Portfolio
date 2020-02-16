@@ -4,8 +4,8 @@ import { Link } from 'react-router-dom'
 function Header() {
     return (
         <nav className="flex-col front">  
-            <h2 className="title">ADAM FRANK WHITE</h2> 
-            <hr className="title-rule"></hr>     
+            <Link to="/"><h1 className="title">ADAM FRANK WHITE</h1></Link>
+            {/* <hr className="title-rule"></hr>      */}
             <ul className="nav">
                 
                 <Link to="/about"><li className="nav-item">About</li></Link>
