@@ -20,13 +20,11 @@ class EnlargedCard extends React.Component {
         return (
             <div ref={div => this.myElement = div}
                 className="card-large front"
-                // onClick={() => this.props.clickProject(this.props.id)}
             >
                 <h2 className="card-title-lg">{this.props.projectName}</h2>
                     <div className="flex">
                         <div className="left-col flex-down">
                             <img 
-                                // className="left-col" 
                                 src={this.props.img} className="imgBig" alt={this.props.projectName} />
                             <div className="flex-center">    
                                 <a href={`https://github.com/AdamFrankWhite/${this.props.gitURI}`} className="imgLinks" target="blank">View Code</a>
