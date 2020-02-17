@@ -295,6 +295,8 @@ nav a {
   position: relative;
 }
 
+/* == Banner == */
+
 .banner {
   height: 70vh;
   width: 100%;
@@ -303,8 +305,16 @@ nav a {
   align-items: center;
 }
 
+.banner-content {
+  z-index: 1000;
+  /* opacity: 1; */
+}
 .banner-sub {
   margin-top: 0;
+  z-index: 1000;
+  background-color: #1F2424;
+  /* padding: 0.5em; */
+  border-radius: 10px;
 }
 
 .avatar {
@@ -335,9 +345,7 @@ nav a:hover:after{
 }
 
 * {
-  /* padding: 0; */
   margin: 0;
-  /* box-sizing: border-box; */
 }
 
 ul {
@@ -403,16 +411,9 @@ h2 {
   
 }
 
-/* .nested-item {
-  padding: 0.5em 0.25em;
-  width: 250px;
-  border: 1px black solid;
+.project-links {
+  margin-bottom: 1em;
 }
-.nested-item:hover {
-  border-left: 8px blue solid;
-  transition: 0.3s;
-} */
-
 .submit {
   align-self: center;
   padding: 0.5em 1em;

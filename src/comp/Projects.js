@@ -49,17 +49,17 @@ class Projects extends React.Component {
                 projectURL: "https://my-fave-beers.herokuapp.com",
                 tech: "React, Node, MongoDB, Express, Bootstrap", 
                 img:"img/beer-app.jpg",
-                description: ["My most ambitious project so far, this was my first foray into developing a full-stack web application. Using a whole slew of new technology, I became comfortable installing packages, which I needed a lot for this project: express, axios, bootstrap, bcrypt, and others. Using the Untappd API, I created a beer bookmark app. I would learn a lot about conditional rendering, back end, middleware and more.", "On the back end, I created a server using Express, that interfaced with a cloud-based Mongo database. The application allows users to register and login, using bcrypt to encrypt passwords before storing them in the database, with axios handling the CRUD requests.", "Finally, I uploaded the app to Heroku. I encountered difficulty getting the backend to work in production; it turned out that you can only use a single port per heroku app. Splitting the app into two heroku apps solved the issue."]
+                description: ["My most ambitious project so far, this was my first foray into developing a full-stack web application. Using a whole slew of new technology, I became comfortable installing packages, which I needed a lot for this project: express, axios, bootstrap, bcrypt, and others. Using the Untappd API, I created a beer bookmark app. I would learn a lot about conditional rendering, back end, middleware and more.", "On the back end, I created a server using Express, that interfaced with a cloud-based Mongo database. The application allows users to register and login, using bcrypt to encrypt passwords before storing them in the database, with axios handling the CRUD requests.", "I uploaded the app to Heroku. I encountered difficulty getting the backend to work in production; it turned out that you can only use a single port per heroku app. Splitting the app into two heroku apps solved the issue."]
             },
-            // {
-            //     id: 1, 
-            //     projectName: "Ebook Landing Page",
-            //     gitURI: "landing-page-1",
-            //     projectURL: "http://www.quittingweedthebook.com", 
-            //     tech: "HTML, CSS, jQuery, Bootstrap", 
-            //     img:"img/ebook.jpg",
-            //     description: ["My sole commercial project thus far, I created a landing page using HTML, CSS, jQuery and Bootstrap.", "I used jQuery for some simple, neat animation, and used media queries to create a mobile and tablet-friendly view. The project involved used simple Bootstrap classes; it also has an integrated Wordpress blog, hosted in a sub-directory with a similar design theme."]
-            // },
+            {
+                id: 1, 
+                projectName: "Ebook Landing Page",
+                gitURI: "landing-page-1",
+                projectURL: "http://www.quittingweedthebook.com", 
+                tech: "HTML, CSS, jQuery, Bootstrap", 
+                img:"img/ebook.jpg",
+                description: ["My sole commercial project thus far, I created a landing page using HTML, CSS, jQuery and Bootstrap.", "I used jQuery for some simple, neat animation, and used media queries to create a mobile and tablet-friendly view. The project involved used simple Bootstrap classes; it also has an integrated Wordpress blog, hosted in a sub-directory with a similar design theme."]
+            },
             {
                 id: 2, 
                 projectName: "Castle Explorer",
@@ -147,9 +147,7 @@ class Projects extends React.Component {
                 <MediaQuery minWidth={1201}>
                     <div className="carousel">
                         <Carousel responsive={responsive} showDots={true} renderButtonGroupOutside={true} >
-                            
                             {projects}
-                            
                         </Carousel>
                         
                     </div>

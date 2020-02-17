@@ -22,6 +22,10 @@ class ProjectCard extends React.Component {
                     <p className="text-body">
                         {this.props.description}
                     </p> 
+                    <div className="flex-center project-links">    
+                        <a href={`https://github.com/AdamFrankWhite/${this.props.gitURI}`} className="imgLinks" target="blank">View Code</a>
+                        <a href={`${this.props.projectURL}`} className="imgLinks" target="blank">View Project</a>
+                    </div>
                 </MediaQuery>  
                        
                 
