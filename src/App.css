@@ -260,14 +260,7 @@ label:hover {
   font-size: 1.25em;
   font-weight: 400;
 }
-.card:hover {
-  opacity: 0.8;
-  transition: 0.3s;
-  background-color: black;
-  color: white;
-  cursor: pointer;
-  /* transition: border-radius 0.3s; */
-}
+
 
 .flex-down {
   display: flex;
@@ -435,6 +428,16 @@ h2 {
   padding: 0.5em 1em;
 }
 
+
+@media (min-width: 768px) {
+  .card:hover {
+    opacity: 0.8;
+    transition: 0.3s;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+  }
+}
 @media (min-width: 1200px) {
   nav a {
     font-size: 1.5em;
